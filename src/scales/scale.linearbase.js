@@ -71,7 +71,7 @@ function generateTicks(generationOptions, dataRange) {
 module.exports = function(Chart) {
 
 	var noop = helpers.noop;
-
+	
 	Chart.LinearScaleBase = Scale.extend({
 		getRightValue: function(value) {
 			if (typeof value === 'string') {
@@ -195,4 +195,6 @@ module.exports = function(Chart) {
 			Scale.prototype.convertTicksToLabels.call(me);
 		}
 	});
+	
+	Chart.LinearScaleBaseGenerateTicks = generateTicks;
 };
